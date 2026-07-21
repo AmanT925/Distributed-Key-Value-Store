@@ -1,0 +1,7 @@
+build/
+*.wal
+data/
+.cache/
+.vscode/
+.DS_Store
+.claude/

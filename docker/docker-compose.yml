@@ -1,0 +1,33 @@
+services:
+  node1:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    hostname: node1
+    command: ["node1", "/app/cluster.conf", "/app/data"]
+    ports:
+      - "5001:5001"
+    networks: [kvnet]
+
+  node2:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    hostname: node2
+    command: ["node2", "/app/cluster.conf", "/app/data"]
+    ports:
+      - "5002:5001"
+    networks: [kvnet]
+
+  node3:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    hostname: node3
+    command: ["node3", "/app/cluster.conf", "/app/data"]
+    ports:
+      - "5003:5001"
+    networks: [kvnet]
+
+networks:
+  kvnet:
